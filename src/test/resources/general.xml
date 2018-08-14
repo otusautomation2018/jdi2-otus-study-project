@@ -3,6 +3,8 @@
 <suite name="Test suite" parallel="methods" thread-count="1">
     <test name="Tests" preserve-order="true">
         <classes>
+            <class name="eu.onlyoffice.SomeTests"/>
+            <class name="eu.onlyoffice.SomeTests2"/>
         </classes>
     </test>
 </suite>

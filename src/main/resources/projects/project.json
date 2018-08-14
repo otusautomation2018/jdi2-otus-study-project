@@ -1,0 +1,9 @@
+{
+  "title":"first project",
+  "description": "lorem ipsum test",
+  "manager": "Я",
+  "tags": [
+    "otus",
+    "test"
+  ]
+}
