@@ -20,6 +20,7 @@ public class NavigationThroughSite {
         if (!projectsPage.pageMenu.displayed()){
             homePage.projects.click();
             projectsPage.pageMenu.wait(WebElement::isDisplayed, CommonForTheSiteData.TIMEOUT_OF_PAGE_LOADED);
+            /*ToDo Fix the wait. */
             try {
                 Thread.sleep(1000);
             } catch (InterruptedException e) {
@@ -51,12 +52,19 @@ public class NavigationThroughSite {
     @Step
     public static void createNewProject(Project project){
         newProjectPage.fillAndSubmitAllFields(project);
+        projectPage.titleOfProject.wait(WebElement::isDisplayed, CommonForTheSiteData.TIMEOUT_OF_ELEMENT_LOADED);
     }
 
     @Step
     public static void createNewProjectWithValidData(){
         Project project = Project.createFromFile(CommonForTheSiteData.PATH_TO_PROJECT_DATA_FILE);
         createNewProject(project);
+    }
+
+    @Step
+    public static void loginAndCreateNewProject(){
+        comeToNewProjectPage();
+        createNewProjectWithValidData();
     }
 
     @Step
